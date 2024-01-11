@@ -1,7 +1,7 @@
 'use client'
-import stackData from '@/utils/iconLoader';
-import Image from 'next/image';
-import '../styles/containerImage.css';
+import stackData from "@/utils/iconLoader"
+import Image from 'next/image'
+import '../styles/containerImage.css'
 
 export const ContainerImage = () => {
   function Render() {
