@@ -3,6 +3,4 @@
 
 yarn next lint --fix
 
-echo 'foiii'
-
 git add .
