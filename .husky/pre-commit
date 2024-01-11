@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-next lint --fix
+yarn next lint --fix
+
+echo 'foiii'
+
+git add .
