@@ -7,7 +7,7 @@
       "pre-commit": "echo 'oii'"
     }
   },
-  "lint-staged":{
+  "lint-staged": {
     "*.js": [
       "eslint --fix",
       "git add ."

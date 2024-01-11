@@ -19,16 +19,16 @@ module.exports = {
         "new-box": "0 4px 3px #ff0000",
       },
       rotate: {
-        '-35': '-35deg',
+        "-35": "-35deg",
       },
       top: {
-        "500px":"500px"
-      }
+        "500px": "500px",
+      },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/typography"),
   ],
 };

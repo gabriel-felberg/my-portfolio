@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -7,5 +7,5 @@ export default function Header() {
         <Image alt="logo" src="google.com" />
       </figcaption>
     </header>
-  )
+  );
 }
