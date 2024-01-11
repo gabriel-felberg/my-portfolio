@@ -4,7 +4,7 @@
   "private": true,
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "next lint --fix"
     }
   },
   "lint-staged": {
@@ -33,7 +33,7 @@
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "format": "prettier --write .",
+    "format": "next lint --fix",
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "prepare": "husky install"
   },
