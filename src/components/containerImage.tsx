@@ -37,8 +37,24 @@ export const ContainerImage = () => {
   }
 
   return (
-    <section>
-      <div className="row ">{Render()}</div>
+    <section className="relative flex items-center justify-center max-h-150 pt-28">
+      {/* <div className="row mt-10">{Render()}</div> */}
+      <div className="bg-black justify-center max-w-2xl z-10 border-2 rounded-lg border-white absolute opacity-90 text-white p-10 gap-8 flex flex-col">
+        <h1 className="font-bold text-5xl ">
+          Criando experiências por meio da tecnologia
+        </h1>
+        <p className="font-semibold text-xl">
+          Sou Desenvolvedor Web Full Stack formado na Kenzie Academy Brasil,
+          participando de diversos projetos, resolvendo problemas de alto nível
+          e procurando desenvolver novas habilidades
+        </p>
+        <div className="flex sm:flex-col md:flex-row gap-10 pl-5">
+          <button className="p-5 text-xl font-bold">Projetos</button>
+          <button className="bg-white rounded-md text-black text-xl font-bold p-5">
+            Tecnologias
+          </button>
+        </div>
+      </div>
     </section>
   )
 }

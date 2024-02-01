@@ -5,4 +5,7 @@ module.exports = {
   experimental: {
     serverActions: true,
   },
-};
+  images: {
+    domains: ['github.com'],
+  },
+}
