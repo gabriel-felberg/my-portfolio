@@ -19,6 +19,30 @@ section .row div:nth-child(2n + 1) {
   animation-delay: -40s;
 }
 
+.container {
+  display: flex;
+  /* flex-grow: 1; */
+}
+
+.bloco {
+  width: calc(32% - 22px);
+  height: 200px;
+  transition: width 0.3s ease;
+  flex-grow: 1;
+}
+
+.bloco:hover {
+  width: calc(35% - 22px);
+}
+.container:hover .bloco:not(:hover) {
+  width: calc(25% - 22px);/* Reduz o tamanho dos outros blocos ao passar o mouse em um bloco */
+} 
+
+
+/* .expand:not(:hover){
+  width: 350px;
+} */
+
 @keyframes animate1 {
   0% {
     transform: translateX(-20rem);
