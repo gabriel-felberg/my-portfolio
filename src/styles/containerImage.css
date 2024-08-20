@@ -1,0 +1,74 @@
+/* Este seletor aplica reset de margens e padding para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para o elemento section */
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Alterado para '100vh' para ocupar a altura total da viewport */
+  color: black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Estilos para a classe .row dentro de section */
+section .row {
+  position: relative;
+  width: 100%;
+  padding-top: 3rem; /* Alterado para '3rem' para espaço superior */
+  white-space: nowrap;
+  font-size: 6rem; /* Alterado para '6rem' */
+  transform: rotate(-35deg);
+  top: -50%; /* Alterado para '-50%' para centralizar verticalmente */
+}
+
+/* Estilos para o segundo div de cada .row */
+section .row div:nth-child(2n) {
+  animation: animate1 20s linear infinite;
+  animation-delay: -40s;
+}
+
+/* Estilos para o primeiro div de cada .row */
+section .row div:nth-child(2n + 1) {
+  animation: animate2 20s linear infinite;
+  animation-delay: -40s;
+}
+
+/* Keyframes para animação de slide horizontal */
+@keyframes animate1 {
+  0% {
+    transform: translateX(-20rem);
+  }
+  100% {
+    transform: translateX(-157.5rem);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: translateX(-157.5rem);
+  }
+  100% {
+    transform: translateX(-20rem);
+  }
+}
+
+/* Estilos para o segundo div de cada .row */
+section .row:nth-child(2n) div {
+  background: wheat;
+  animation: animate3 80s linear infinite;
+  animation-delay: -80s;
+}
+
+/* Keyframes para animação de deslocamento horizontal */
+@keyframes animate3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

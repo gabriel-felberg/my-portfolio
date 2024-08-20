@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# yarn check-format || yarn format
+yarn next lint --fix
+# yarn check-format || echo "deu merda"
+# yarn check-lint
+# yarn check-types
+# git diff --exit-code
+
+git add .
