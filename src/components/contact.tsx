@@ -72,7 +72,7 @@ export default function Contact() {
       <div className="w-full h-screen flex items-center justify-center ">
         <form
           onSubmit={onSubmit}
-          className="bg-white shadow-xl rounded-2xl p-10 max-w-md w-full transform transition-all duration-500 hover:shadow-md shadow-[#F2B90C]"
+          className="bg-white shadow-xl rounded-2xl p-10 max-w-md w-[80%] transform transition-all duration-500 hover:shadow-md shadow-[#F2B90C]"
         >
           <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-900">
             Entre em Contato!

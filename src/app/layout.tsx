@@ -15,8 +15,8 @@ export default function RootLayout({
   return (
     <>
       <Provider>
-        <html className="!scroll-smooth overflow-x-hidden">
-          <body>
+        <html className="!scroll-smooth">
+          <body className="overflow-x-hidden">
             <ToastContainer style={{ top: '120px' }} />
             {children}
           </body>
