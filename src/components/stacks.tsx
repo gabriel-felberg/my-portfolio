@@ -18,7 +18,7 @@ export default function Stacks() {
 
   return (
     <>
-      <div className="w-full relative flex justify-start ml-14 bottom-10 animate-gravite-object">
+      <div className="relative flex justify-start ml-14 bottom-10 animate-gravite-object">
         <div className="absolute w-16 h-16 top-2 sm:w-20 sm:h-20 sm:-top-0 xl:-top-10 xl:w-40 xl:h-40 bg-white rotate-45 "></div>
       </div>
       <div
@@ -32,13 +32,13 @@ export default function Stacks() {
           {screenWidth < 768 ? (
             <>
               <button
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-200"
+                className="absolute left-0 top-1/2 text-black -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-200"
                 onClick={() => scrollCarousel(-1)}
               >
                 <FaChevronLeft />
               </button>
               <button
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-200"
+                className="absolute right-0 top-1/2 text-black -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 hover:bg-gray-200"
                 onClick={() => scrollCarousel(1)}
               >
                 <FaChevronRight />
@@ -84,7 +84,7 @@ export default function Stacks() {
             ))}
           </div>
         </div>
-        <div className="relative w-20 h-20 bg-white">
+        <div className="relative w-20 h-20 text-black bg-white">
           <div className="w-20 h-20 bg-white rotate-45 flex justify-center items-center">
             <FiChevronRight className="rotate-45 w-10 h-10" />
           </div>
