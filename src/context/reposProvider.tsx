@@ -45,9 +45,14 @@ export interface IReposType {
   homepage: string
 }
 
-export const ReposContext = createContext(
-  {} as { repos: IReposType[]; repose: number; stackData: IImage[] },
-)
+interface IReposContext {
+  repos: IReposType[]
+  repose: number
+  stackData: IImage[]
+  screenWidth: number
+}
+
+export const ReposContext = createContext<IReposContext>({} as IReposContext)
 
 export const ReposProvider = ({ children }: { children: ReactNode }) => {
   const [repose, setRepos] = useState(0)
@@ -140,10 +145,21 @@ export const ReposProvider = ({ children }: { children: ReactNode }) => {
     { title: 'Github', img: SiGithub },
   ]
 
-  // console.log(repos)
+  const [screenWidth, setScreenWidth] = useState<number>(1400)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setScreenWidth(window.innerWidth)
+
+      const handleResize = () => setScreenWidth(window.innerWidth)
+      window.addEventListener('resize', handleResize)
+      console.log(window.innerWidth)
+      return () => window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
-    <ReposContext.Provider value={{ repos, repose, stackData }}>
+    <ReposContext.Provider value={{ repos, repose, stackData, screenWidth }}>
       {children}
     </ReposContext.Provider>
   )

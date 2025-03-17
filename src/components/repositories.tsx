@@ -3,63 +3,50 @@ import { ReposContext } from '@/context/reposProvider'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
-import '../styles/projectsCards.css'
 
 export default function Repositories() {
   const { repos } = useContext(ReposContext)
-  // console.log(repose)
 
   return (
-    <div className="flex flex-col my-16 items-center">
-      <h2 className="text-6xl font-bold mb-12">Meus Projetos</h2>
-      <div className="max-w-[1200px] container flex-grow flex-wrap flex-row items-center justify-center gap-10 ">
+    <div className="flex flex-col my-16 items-center px-4" id="projects">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center">
+        Meus Projetos
+      </h2>
+      <div className="max-w-[1200px] w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {repos?.map(
           (repository) =>
             repository.name !== 'gabriel-felberg' && (
               <div
                 key={repository.id}
-                className="flex flex-col bloco relative gap-5 text-white"
+                className="relative flex flex-col rounded-2xl overflow-hidden shadow-lg bg-gray-900 backdrop-blur-md text-white 
+                transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:backdrop-blur-none cursor-pointer "
               >
                 <Image
                   alt="image"
                   src={repository.image}
-                  className="w-full h-full rounded-2xl"
+                  className="w-full h-52 object-cover"
                 />
                 {repository.homepage && (
                   <Link
                     target="_blank"
                     href={repository.homepage}
-                    className="flex absolute w-full h-full z-10"
+                    className="absolute inset-0 z-10"
                   />
                 )}
-                <section className="flex w-full h-full absolute bg-gradient-to-tr from-black to-transparent rounded-2xl" />
-                <div className="flex flex-col trasition justify-end w-full h-full absolute gap-2 ml-5 mt-3">
-                  <h1 className="text-4xl font-bold">{repository.name}</h1>
-                  <div className="flex flex-row gap-5">
-                    <h3 className="text-xl font-bold">Tecnologias:</h3>
-                    {repository.language ? (
-                      <div>
-                        <h4>{repository.language}</h4>
-                      </div>
-                    ) : (
-                      <div>
-                        <h4>Não identificado</h4>
-                      </div>
-                    )}
+                <section className="absolute bg-gradient-to-tr from-black to-transparent transition-opacity duration-500 hover:opacity-0"></section>
+                <div className="absolute bottom-0 p-4">
+                  <h1 className="text-lg md:text-xl font-bold">
+                    {repository.name}
+                  </h1>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <h3 className="text-sm font-semibold">Tecnologias:</h3>
+                    <h4 className="text-sm">
+                      {repository.language || 'Não identificado'}
+                    </h4>
                   </div>
-                  <p className="max-w-xs description">
+                  <p className="text-sm mt-2">
                     {repository.description?.substring(0, 129)}
                   </p>
-                  {/* <div className="flex flex-row gap-5">
-                    <Link
-                      target="_blank"
-                      href={repository.html_url}
-                      className="flex flex-row w-48 h-5 gap-2 items-center hover:text-red-600"
-                    >
-                      <FaGithub className="w-8 h-8" />
-                      <p className="text-lg font-bold ">Código do Github</p>
-                    </Link>
-                  </div> */}
                 </div>
               </div>
             ),

@@ -1,4 +1,5 @@
 import Provider from '@/provider'
+import { ToastContainer } from 'react-toastify'
 import './globals.css'
 
 export const metadata = {
@@ -14,8 +15,11 @@ export default function RootLayout({
   return (
     <>
       <Provider>
-        <html>
-          <body>{children}</body>
+        <html className="!scroll-smooth overflow-x-hidden">
+          <body>
+            <ToastContainer style={{ top: '120px' }} />
+            {children}
+          </body>
         </html>
       </Provider>
     </>

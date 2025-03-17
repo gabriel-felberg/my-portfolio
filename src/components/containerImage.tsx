@@ -1,18 +1,36 @@
 'use client'
+import Link from 'next/link'
+// import Image from 'next/image'
 // import stackData from '@/utils/iconLoader'
 // import { ReposContext } from '@/context/reposProvider'
 // import { useContext } from 'react'
+import { useState } from 'react'
 import '../styles/containerImage.css'
 
 export const ContainerImage = () => {
   // const { stackData } = useContext(ReposContext)
   // const lines = Array.from({ length: 23 }, (_, i) => i + 1)
   // const icons = Array.from({ length: 8 }, (_, i) => i + 1)
+  const [active, setActive] = useState(true)
 
   return (
-    <section className="flex items-center justify-center max-h-150 pt-28">
+    <section className="flex border-white border-y-2 items-center justify-center max-h-150 pt-28">
       {/* <Image
         src={image}
+        alt="gif"
+        layout="fill"
+        className="select-none w-full h-full object-cover"
+        loading="eager"
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          userSelect: 'none',
+        }}
+      /> */}
+      {/* <img src="/gifs/Animacao.gif" alt="My Gif" /> */}
+      {/* <Image
+        src="/gifs/Animacao.gif"
         alt="gif"
         layout="fill"
         className="select-none w-full h-full object-cover"
@@ -67,7 +85,7 @@ export const ContainerImage = () => {
           ))}
         </>
       </div> */}
-      <div className="bg-black justify-center max-w-2xl z-10 border-2 rounded-lg border-white absolute opacity-90 text-white p-10 gap-8 flex flex-col">
+      <div className="bg-black transition delay-500 justify-center max-w-2xl z-10 border-2 rounded-lg border-white absolute text-white p-10 gap-8 flex flex-col">
         <h1 className="font-bold text-5xl ">
           Criando experiências por meio da tecnologia
         </h1>
@@ -76,11 +94,21 @@ export const ContainerImage = () => {
           participando de diversos projetos, resolvendo problemas de alto nível
           e procurando desenvolver novas habilidades
         </p>
-        <div className="flex sm:flex-col md:flex-row gap-10 pl-5">
-          <button className="p-5 text-xl font-bold">Projetos</button>
-          <button className="bg-white rounded-md text-black text-xl font-bold p-5">
+        <div className="flex flex-row gap-10 pl-5 ">
+          <Link
+            href="#projects"
+            className={`p-5 text-xl font-bold rounded-lg ${active ? 'bg-black text-white' : 'bg-white text-black'}`}
+            onClick={() => setActive(false)}
+          >
+            Projetos
+          </Link>
+          <Link
+            href="#stacks"
+            className={`p-5 text-xl font-bold rounded-lg ${active ? 'bg-white text-black' : 'bg-black text-white'}`}
+            onClick={() => setActive(true)}
+          >
             Tecnologias
-          </button>
+          </Link>
         </div>
       </div>
     </section>
